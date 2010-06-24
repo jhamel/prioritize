@@ -3,13 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 describe Task do
 
   before(:each) do
-    @time = Time.now
-    @task    = Task.new("description", 1, @time)
-    @parent  = Task.new("parent", 1, @time)
-    @child_a = Task.new("child_a", 1, @time)
-    @child_b = Task.new("child_b", 1, @time)
-    @parent.add_task(@child_a)
-    @parent.add_task(@child_b)
+    setup_tasks
   end
 
   describe "#add_task" do
